@@ -1,5 +1,6 @@
 flask
 redis
 gunicorn
+greenlet
 gevent
 wsgiserver

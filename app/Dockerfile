@@ -1,4 +1,4 @@
-FROM python:3.9-slim-buster
+FROM python:3.9-slim
 
 ENV BIND_PORT 5000
 ENV REDIS_HOST localhost
