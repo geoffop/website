@@ -1,7 +1,8 @@
 version: '3.8'
 services:
   nginx:
-   build: ./nginx
+   image: geoffop96/nginx:latest
+    #  build: ./nginx
    links:
      - app:app
      - app2:app2
@@ -9,8 +10,9 @@ services:
      - "80:80"
 
   app:
-    build:
-      context: ./app
+    # build:
+    #   context: ./app
+    image: geoffop96/website:latest
     depends_on:
       - redis
     environment:
@@ -19,8 +21,9 @@ services:
       - "5000"
 
   app2:
-    build:
-      context: ./app
+    # build:
+    #   context: ./app
+    image: geoffop96/website:latest
     depends_on:
       - redis
     environment:
