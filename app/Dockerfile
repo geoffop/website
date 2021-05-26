@@ -7,7 +7,7 @@ ENV PATH="/venv/bin:$PATH"
 RUN python3 -m venv /venv --system-site-packages &&\
     python3 -m pip install --no-cache-dir -r requirements.txt 
 
-FROM python:3-slim
+FROM python:3-alpine
 COPY --from=build /venv /venv
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
