@@ -1,4 +1,4 @@
-FROM python:alpine
+FROM pypy:3-slim
 
 ENV BIND_PORT 5000
 ENV REDIS_HOST localhost
