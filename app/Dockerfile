@@ -1,4 +1,4 @@
-FROM python:3 AS build
+FROM pypy:3 AS build
 ENV PYTHONUNBUFFERED=1
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1
 WORKDIR /app
@@ -7,7 +7,7 @@ ENV PATH="/venv/bin:$PATH"
 RUN python3 -m venv /venv --system-site-packages &&\
     python3 -m pip install --no-cache-dir -r requirements.txt 
 
-FROM python:3-slim
+FROM pypy:3-slim
 COPY --from=build /venv /venv
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
