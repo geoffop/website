@@ -1,6 +1,6 @@
 flask
 redis
-gunicorn
 greenlet
 gevent
 wsgiserver
+Flask-Manage-Webpack
