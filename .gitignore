@@ -130,3 +130,7 @@ dmypy.json
 
 # vscode
 .vscode
+node_modules/
+/.parcel-cache
+src/.parcel-cache
+/src
