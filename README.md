@@ -5,6 +5,12 @@
 
 Personal website and web dev playground for Geoff Poole
 
+## Deploy
+
+```bash
+npm run deploy
+```
+
 ## Build
 
 ```bash
