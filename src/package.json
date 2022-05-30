@@ -6,11 +6,13 @@
     "scripts": {
         "start": "parcel",
         "build": "parcel build",
-        "deploy": "parcel build && purgecss --css dist/*.css --content dist/index.html dist/*.js  --output dist/"
+        "deploy": "parcel build && mkdir dist/temp && purgecss --css dist/*.css --content dist/index.html dist/*.js  --output dist/temp && mv dist/temp/* dist/ && rm -rf dist/temp"
     },
     "devDependencies": {
         "@parcel/compressor-gzip": "^2.6.0",
+        "@parcel/optimizer-cssnano": "^2.6.0",
         "@parcel/optimizer-esbuild": "^2.6.0",
+        "@parcel/reporter-bundle-analyzer": "^2.6.0",
         "@parcel/transformer-sass": "^2.6.0",
         "parcel": ">=2.6.0",
         "purgecss": "^4.0.0"
