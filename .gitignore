@@ -135,3 +135,4 @@ node_modules/
 src/.parcel-cache
 /src/parcel-bundle-reports
 /src/.node_modulesfont-awesomescss_variables.scss
+/src/package-lock.json
