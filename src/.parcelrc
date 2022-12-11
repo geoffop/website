@@ -1,13 +1,8 @@
 {
   "extends": "@parcel/config-default",
-  "optimizers": {
-    "*.js": ["@parcel/optimizer-esbuild"],
-    "*.css*": ["@parcel/optimizer-cssnano"],
-    "*.html": ["@parcel/optimizer-htmlnano"]
-  },
-  "reporters": ["...", "@parcel/reporter-bundle-analyzer"],
   "compressors": {
     "*.{html,css,js,svg,map}": [
+      "...",
       "@parcel/compressor-gzip",
       "@parcel/compressor-brotli"
     ]
