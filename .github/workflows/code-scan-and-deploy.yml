@@ -55,10 +55,6 @@ jobs:
         run: npm install
         working-directory: src
 
-#       - name: fix project
-#         run: |
-#           awk '{ if (NR == 4) print "$fa-font-path: node_modules/font-awesome/fonts;"; else print $0}' ./node_modules/font-awesome/scss/_variables.scss > ./node_modules/font-awesome/scss/temp && cp ./node_modules/font-awesome/scss/temp ./node_modules/font-awesome/scss/_variables.scss
-#         working-directory: src
       # Build project
       - name: Build project
         run: npm run deploy
@@ -66,25 +62,3 @@ jobs:
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
-
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_DUNE_0F49A8210 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-          action: "upload"
-          skip_app_build: true
-          app_location: "src/dist" # App source code path
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_WONDERFUL_DUNE_0F49A8210 }}
-          action: "close"
