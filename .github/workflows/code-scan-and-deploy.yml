@@ -55,10 +55,10 @@ jobs:
         run: npm install
         working-directory: src
 
-      - name: fix project
-        run: |
-          awk '{ if (NR == 4) print "$fa-font-path: node_modules/font-awesome/fonts;"; else print $0}' ./node_modules/font-awesome/scss/_variables.scss > ./node_modules/font-awesome/scss/temp && cp ./node_modules/font-awesome/scss/temp ./node_modules/font-awesome/scss/_variables.scss
-        working-directory: src
+#       - name: fix project
+#         run: |
+#           awk '{ if (NR == 4) print "$fa-font-path: node_modules/font-awesome/fonts;"; else print $0}' ./node_modules/font-awesome/scss/_variables.scss > ./node_modules/font-awesome/scss/temp && cp ./node_modules/font-awesome/scss/temp ./node_modules/font-awesome/scss/_variables.scss
+#         working-directory: src
       # Build project
       - name: Build project
         run: npm run deploy
